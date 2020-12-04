@@ -11,8 +11,11 @@ namespace WebApplication1.Models
     {
         [Key]
         public int id { get; set; }
+        [Required]
         public string Name { get; set; }
         [DisplayName("Display Order")]
+        [Required]
+        [Range(1,int.MaxValue,ErrorMessage ="Display Order for Category must be greater than 0.")]
         public int DisplayOrder { get; set; }
 
     }
